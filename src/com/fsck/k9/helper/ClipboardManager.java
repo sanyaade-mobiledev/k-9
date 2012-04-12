@@ -28,11 +28,7 @@ public abstract class ClipboardManager {
         Context appContext = context.getApplicationContext();
 
         if (sInstance == null) {
-            if (Build.VERSION.SDK_INT < Build.VERSION_CODES.HONEYCOMB) {
-                sInstance = new ClipboardManagerApi1(appContext);
-            } else {
-                sInstance = new ClipboardManagerApi11(appContext);
-            }
+            sInstance = new ClipboardManagerApi1(appContext);
         }
 
         return sInstance;
